@@ -1,4 +1,4 @@
-                                                                    ELECTRONIC PRODUCTS SALES & CUSTOMER TRACKING PORTAL
+ELECTRONIC PRODUCTS SALES & CUSTOMER TRACKING PORTAL
 
 1. A customer-focused web application that starts with a secure login page for authenticated access.
 
@@ -14,6 +14,8 @@
 
 5. Designed for small electronic product businesses to efficiently manage daily product flow and customer interactions.
    
+
+
 
 OUTPUT SCREENSHOTS
 
@@ -43,7 +45,8 @@ OUTPUT SCREENSHOTS
 
 7. DATABASE CONNECTIVITY WITH JDBC
 
-![image](https://github.com/user-attachments/assets/884112ee-9ff1-45c7-8b29-4881de25ea0f)
+![image](https://github.com/user-attachments/assets/256f3a82-c8a7-4dd5-a81b-9424b93c6644)
+
 
 
 
