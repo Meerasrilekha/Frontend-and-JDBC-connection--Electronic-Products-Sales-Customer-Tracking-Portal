@@ -1,4 +1,4 @@
-ELECTRONIC PRODUCTS SALES & CUSTOMER TRACKING PORTAL
+# ELECTRONIC PRODUCTS SALES & CUSTOMER TRACKING PORTAL
 
 1. A customer-focused web application that starts with a secure login page for authenticated access.
 
