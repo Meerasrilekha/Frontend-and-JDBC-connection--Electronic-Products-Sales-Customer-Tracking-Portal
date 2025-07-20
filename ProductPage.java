@@ -237,6 +237,7 @@ public class ProductPage extends javax.swing.JPanel {
             productTable.setModel(productDAO.buildTableModel(productDAO.getQueryResult()));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database error: " + throwables.getMessage());
         }
     }
 
@@ -247,6 +248,7 @@ public class ProductPage extends javax.swing.JPanel {
             productTable.setModel(productDAO.buildTableModel(productDAO.getProductSearch(text)));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database error: " + throwables.getMessage());
         }
     }
 

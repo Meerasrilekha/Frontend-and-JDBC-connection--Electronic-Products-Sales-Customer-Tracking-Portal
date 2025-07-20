@@ -183,13 +183,20 @@ public class PurchasePage extends javax.swing.JPanel {
     private void purchaseTableMouseClicked(java.awt.event.MouseEvent evt) {                                           
         int row = purchaseTable.getSelectedRow();
         int col = purchaseTable.getColumnCount();
-
         Object[] data = new Object[col];
         for (int i=0; i<col; i++)
             data[i] = purchaseTable.getValueAt(row, i);
-        
-        Integer.parseInt(data[3].toString());
-        data[1].toString();
+        try {
+            if (data[3] != null) {
+                Integer.parseInt(data[3].toString());
+            }
+            if (data[1] != null) {
+                data[1].toString();
+            }
+        } catch (NumberFormatException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Invalid number format in table data: " + ex.getMessage());
+        }
     }                                          
 
     private void purchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
@@ -210,6 +217,8 @@ public class PurchasePage extends javax.swing.JPanel {
             } else
             JOptionPane.showMessageDialog(null, "Please add this product in the \"Products\" section before proceeding.");
         } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
         }
     }                                              
 
@@ -226,6 +235,8 @@ public class PurchasePage extends javax.swing.JPanel {
                 sellText.setText("");
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
         }
     }                                    
 
@@ -234,6 +245,8 @@ public class PurchasePage extends javax.swing.JPanel {
             ProductDAO productDAO = new ProductDAO();
             purchaseTable.setModel(productDAO.buildTableModel(productDAO.getPurchaseInfo()));
         } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database error: " + throwables.getMessage());
         }
     }
 
@@ -242,6 +255,8 @@ public class PurchasePage extends javax.swing.JPanel {
             ProductDAO productDAO = new ProductDAO();
             purchaseTable.setModel(productDAO.buildTableModel(productDAO.getPurchaseSearch(text)));
         } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
         }
     }
     
